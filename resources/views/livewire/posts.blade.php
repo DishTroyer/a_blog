@@ -14,8 +14,10 @@
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Id</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Title</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Status</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Post Created</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Image</th>
-                        <th scope="col" class="relative px-6 py-3">Edit</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Post Last Updated</th>
+                        <th scope="col" class="relative px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Edit</th>
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -31,10 +33,12 @@
                           Not Active
                           @endif
                         </td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $post->created_at }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
                         <img class="w-8 h-8 rounded-full" src="{{ asset('storage/photos/'. $post->image) }}" />
                         </td>
-                        <td class="px-6 py-4 text-right text-sm">
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $post->updated_at }}</td>
+                        <td class="px-6 py-4 text-left text-sm">
                           <x-jet-button wire:click="showEditPostModal({{ $post->id }})" class="bg-green-500">Edit</x-jet-button>
                           <x-jet-button wire:click="deletePost({{ $post->id}})" class="bg-red-700">Delete</x-jet-button>
                         </td>
