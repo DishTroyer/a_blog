@@ -29,3 +29,7 @@ Route::group(['middleware' => ['auth:sanctum', 'role:admin']], function(){
 });
 
 Route::get('/posts/{slug}',PostShow::class)->name('posts.show');
+
+Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');
+
