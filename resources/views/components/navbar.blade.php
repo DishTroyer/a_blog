@@ -49,9 +49,14 @@
             @auth
               <a  class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none hover:bg-black hover:text-white"
                 style="transition: all 0.15s ease 0s;" href="{{ route('dashboard')}}">Dashboard</a>
+              
               @else
-              <a class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none hover:bg-black hover:text-white"
-                style="transition: all 0.15s ease 0s;" href="{{ route('login')}}">Login</a>
+              <div class="p-2 m-2 justify-end ">
+                <a class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none hover:bg-black hover:text-white"
+                  style="transition: all 0.15s ease 0s;" href="{{ route('register')}}">Register</a>
+                <a class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none hover:bg-black hover:text-white"
+                  style="transition: all 0.15s ease 0s;" href="{{ route('login')}}">Login</a>
+              </div>
               @endauth
             </li>
           </ul>
