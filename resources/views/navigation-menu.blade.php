@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 ">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -11,10 +11,18 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link class="dark:text-gray-200 font-bold" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
+                    <x-jet-nav-link class=" font-bold text-2xl text-white" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('BLOG') }}
                     </x-jet-nav-link>
+                </div>
+                <div>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">Blog</a>
+      <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">About</a>
+      <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">Contact</a>
+
+    </nav>
                 </div>
             </div>
 
@@ -24,7 +32,7 @@
                     <div class="ml-3 relative">
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
-                                <span class="inline-flex rounded-md">
+                                <span class="inline-flex rounded-md hover:bg-indigo-700 hover:text-white">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
                                         {{ Auth::user()->currentTeam->name }}
 
