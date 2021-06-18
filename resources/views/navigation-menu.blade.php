@@ -18,7 +18,9 @@
                 </div>
                 <div>
                 <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">Blog</a>
+                <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white" href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
+                        {{ __('Posts') }}
+                    </a>
       <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">About</a>
       <a class="mr-5 p-2 rounded mt-2 text-white hover:bg-blue-400 hover:text-white">Contact</a>
 

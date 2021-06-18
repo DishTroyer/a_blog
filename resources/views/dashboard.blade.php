@@ -7,4 +7,7 @@
             </div>
         </div>
     </div>
+
+    <x-post-list />
+
 </x-app-layout>
